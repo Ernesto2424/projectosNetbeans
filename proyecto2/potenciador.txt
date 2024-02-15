@@ -1,0 +1,1 @@
+[Item{nombre=Estrella, descripcion=El potenciandor mas grande de todos, salud=0.0, habilidad=50.0} Potenciador{cant_fuerza=50.0, velocidad=50.0}, Item{nombre=Hongo Rojo, descripcion=Potenciador habilidad y fuerza, salud=0.0, habilidad=25.0} Potenciador{cant_fuerza=25.0, velocidad=0.0}]

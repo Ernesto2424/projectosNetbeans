@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-package class diagram">
+  <ClassDiagramComponents>
+    <Class name="Conexion" package="datos" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="JDBC_URL" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="JDBC_USER" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="JDBC_PASSWORD" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="dataSource" type="BasicDataSource" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getDataSource" returnType="DataSource" visibility="public" isStatic="true"/>
+        <Method name="getConnection" returnType="Connection" visibility="public" isStatic="true"/>
+        <Method name="close" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ResultSet" name="rs"/>
+        </Method>
+        <Method name="close" returnType="void" visibility="public" isStatic="true">
+          <Argument type="PreparedStatement" name="pst"/>
+        </Method>
+        <Method name="close" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="cn"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="EntradaDao" package="datos" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="SQL_INSERT" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="SQL_SELECT" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="SQL_SELECT_BY_ID" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="entradaActual" type="int" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="INSERT" returnType="Object" visibility="public">
+          <Argument type="Object" name="objeto"/>
+        </Method>
+        <Method name="SELECT" returnType="List&lt;Object&gt;" visibility="public"/>
+        <Method name="SELECT_BY_ID" returnType="Object" visibility="public">
+          <Argument type="Object" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ProductoDao" package="datos" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="SQL_INSERT" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="SQL_SELECT" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="SQL_SELECT_BY_ID" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="INSERT" returnType="Object" visibility="public">
+          <Argument type="Object" name="objeto"/>
+        </Method>
+        <Method name="SELECT" returnType="List&lt;Object&gt;" visibility="public"/>
+        <Method name="SELECT_BY_ID" returnType="Object" visibility="public">
+          <Argument type="Object" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SalidaDao" package="datos" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="SQL_INSERT" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="SQL_SELECT" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="SQL_SELECT_BY_ID" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="INSERT" returnType="Object" visibility="public">
+          <Argument type="Object" name="objeto"/>
+        </Method>
+        <Method name="SELECT" returnType="List&lt;Object&gt;" visibility="public"/>
+        <Method name="SELECT_BY_ID" returnType="Object" visibility="public">
+          <Argument type="Object" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StockDao" package="datos" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="SQL_SELECT_STOCK_TOTAL" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="SELECT" returnType="List&lt;Object&gt;" visibility="public"/>
+        <Method name="INSERT" returnType="Object" visibility="public">
+          <Argument type="Object" name="objeto"/>
+        </Method>
+        <Method name="SELECT_BY_ID" returnType="Object" visibility="public">
+          <Argument type="Object" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="EntradaSalida" package="dominio" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="producto" type="Producto" visibility="private"/>
+        <Field name="codigo" type="int" visibility="private"/>
+        <Field name="fecha" type="String" visibility="private"/>
+        <Field name="cantidad" type="int" visibility="private"/>
+        <Field name="actual" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Producto" name="producto"/>
+          <Argument type="int" name="codigo"/>
+          <Argument type="String" name="fecha"/>
+          <Argument type="int" name="cantidad"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Producto" name="producto"/>
+          <Argument type="int" name="codigo"/>
+          <Argument type="String" name="fecha"/>
+          <Argument type="int" name="cantidad"/>
+          <Argument type="int" name="actual"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Producto" name="producto"/>
+          <Argument type="int" name="cantidad"/>
+          <Argument type="double" name="actual"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Producto" name="producto"/>
+          <Argument type="String" name="fecha"/>
+          <Argument type="int" name="cantidad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getProducto" returnType="Producto" visibility="public"/>
+        <Method name="setProducto" returnType="void" visibility="public">
+          <Argument type="Producto" name="producto"/>
+        </Method>
+        <Method name="getCodigo" returnType="int" visibility="public"/>
+        <Method name="setCodigo" returnType="void" visibility="public">
+          <Argument type="int" name="codigo"/>
+        </Method>
+        <Method name="getFecha" returnType="String" visibility="public"/>
+        <Method name="setFecha" returnType="void" visibility="public">
+          <Argument type="String" name="fecha"/>
+        </Method>
+        <Method name="getCantidad" returnType="int" visibility="public"/>
+        <Method name="setCantidad" returnType="void" visibility="public">
+          <Argument type="int" name="cantidad"/>
+        </Method>
+        <Method name="getActual" returnType="double" visibility="public"/>
+        <Method name="setActual" returnType="void" visibility="public">
+          <Argument type="double" name="actual"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Inventario" package="dominio" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="producto" type="Producto" visibility="private"/>
+        <Field name="entradaSalidas" type="EntradaSalida" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Producto" name="producto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getProducto" returnType="Producto" visibility="public"/>
+        <Method name="setProducto" returnType="void" visibility="public">
+          <Argument type="Producto" name="producto"/>
+        </Method>
+        <Method name="getEntradaSalida" returnType="EntradaSalida[]" visibility="public"/>
+        <Method name="setEntradaSalida" returnType="void" visibility="public">
+          <Argument type="EntradaSalida[]" name="entradaSalidas"/>
+        </Method>
+        <Method name="getImporteInventario" returnType="double" visibility="public" isStatic="true">
+          <Argument type="int" name="cantidad"/>
+          <Argument type="double" name="costoUnitario"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Producto" package="dominio" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="codigo" type="int" visibility="private"/>
+        <Field name="descripcion" type="String" visibility="private"/>
+        <Field name="costoUnitario" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="codigo"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="double" name="costoUnitario"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="descripcion"/>
+          <Argument type="double" name="costoUnitario"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="codigo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCodigo" returnType="int" visibility="public"/>
+        <Method name="setCodigo" returnType="void" visibility="public">
+          <Argument type="int" name="codigo"/>
+        </Method>
+        <Method name="getDescripcion" returnType="String" visibility="public"/>
+        <Method name="setDescripcion" returnType="void" visibility="public">
+          <Argument type="String" name="descripcion"/>
+        </Method>
+        <Method name="getCostoUnitario" returnType="double" visibility="public"/>
+        <Method name="setCostoUnitario" returnType="void" visibility="public">
+          <Argument type="double" name="costoUnitario"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="OperacionesDatos" package="interfaces" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Methods>
+        <Method name="INSERT" returnType="T" visibility="package">
+          <Argument type="T" name="objeto"/>
+        </Method>
+        <Method name="SELECT" returnType="List&lt;T&gt;" visibility="package"/>
+        <Method name="SELECT_BY_ID" returnType="T" visibility="package">
+          <Argument type="T" name="id"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="controlador" package="web" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="processRequest" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+        <Method name="ListarEntradas" returnType="void" visibility="private">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+        <Method name="ListarSalidas" returnType="void" visibility="private">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+        <Method name="ListarInventario" returnType="void" visibility="private">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+        <Method name="doGet" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+        <Method name="insertarProducto" returnType="void" visibility="private">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+        <Method name="insertarEntrada" returnType="void" visibility="private">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+        <Method name="insertarSalida" returnType="void" visibility="private">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+        <Method name="doPost" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+        <Method name="getServletInfo" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="dominio.Inventario" target="dominio.Producto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="producto" source="dominio.Inventario" target="dominio.Producto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="datos.StockDao" target="interfaces.OperacionesDatos"/>
+    <UseRelation source="dominio.Inventario" target="dominio.EntradaSalida" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="datos.EntradaDao" target="interfaces.OperacionesDatos"/>
+    <HasRelation name="producto" source="dominio.EntradaSalida" target="dominio.Producto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="datos.SalidaDao" target="interfaces.OperacionesDatos"/>
+    <UseRelation source="dominio.EntradaSalida" target="dominio.Producto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="datos.ProductoDao" target="interfaces.OperacionesDatos"/>
+    <HasRelation name="entradaSalidas" source="dominio.Inventario" target="dominio.EntradaSalida" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

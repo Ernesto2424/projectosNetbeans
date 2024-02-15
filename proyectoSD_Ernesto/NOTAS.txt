@@ -1,0 +1,14 @@
+//        si op = "rpc"{
+//        //menu de las opcions
+//        
+//        //usuario elegie ver los lugares con RPC
+//        //codifgo de lugares
+//    }
+//        
+//        si op = "RMI"{
+//        RMI.TurismoCliente.iniciarClienteRMI();
+//    }
+//        
+//        si op = "sockets"{
+//         Sockets.Cliente.iniciarClienteSockets();
+//    }

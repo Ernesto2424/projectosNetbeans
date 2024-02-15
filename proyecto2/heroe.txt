@@ -1,0 +1,2 @@
+[Heroe{  Nombre: Mario Salud: 100.0 Habilidad: 100.0  velocidad:100.0, fuerza:100.0, vidas: 3 } , Heroe{  Nombre: Luigui Salud: 50.0 Habilidad: 50.0  velocidad:50.0, fuerza:50.0, vidas: 3 } ]
+hola

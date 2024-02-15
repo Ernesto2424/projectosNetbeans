@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-package class diagram">
+  <ClassDiagramComponents>
+    <Class name="TextoBase" package="domain" visibility="public" xPosition="107.0" yPosition="38.0">
+      <Fields>
+        <Field name="texto" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="texto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTexto" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DecoradorAsteriscos" package="implementaciones" visibility="public" xPosition="205.0" yPosition="449.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Texto" name="textoDecorado"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTexto" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DecoradorGuiones" package="implementaciones" visibility="public" xPosition="516.0" yPosition="449.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Texto" name="textoDecorado"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTexto" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DecoradorLineasIgual" package="implementaciones" visibility="public" xPosition="829.0" yPosition="449.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Texto" name="textoDecorado"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTexto" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DecoradorTexto" package="interfaces" visibility="public" isAbstract="true" xPosition="498.0" yPosition="178.0">
+      <Fields>
+        <Field name="textoDecorado" type="Texto" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Texto" name="textoDecorado"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTexto" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Texto" package="interfaces" visibility="public" xPosition="107.0" yPosition="244.0">
+      <Methods>
+        <Method name="getTexto" returnType="String" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="implementaciones.DecoradorGuiones" target="interfaces.DecoradorTexto"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="domain.TextoBase" target="interfaces.Texto"/>
+    <IsRelation name="is" source="implementaciones.DecoradorLineasIgual" target="interfaces.DecoradorTexto"/>
+    <IsRelation name="is" source="implementaciones.DecoradorAsteriscos" target="interfaces.DecoradorTexto"/>
+    <HasRelation name="textoDecorado" source="interfaces.DecoradorTexto" target="interfaces.Texto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="interfaces.DecoradorTexto" target="interfaces.Texto"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

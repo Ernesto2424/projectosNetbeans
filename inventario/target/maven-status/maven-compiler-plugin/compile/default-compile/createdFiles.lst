@@ -1,0 +1,10 @@
+datos\SalidaDao.class
+dominio\Producto.class
+interfaces\OperacionesDatos.class
+datos\StockDao.class
+datos\ProductoDao.class
+datos\Conexion.class
+datos\EntradaDao.class
+dominio\Inventario.class
+web\controlador.class
+dominio\EntradaSalida.class

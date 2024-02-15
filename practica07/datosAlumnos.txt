@@ -1,0 +1,1 @@
+Alumno{idAlumno=1, nombre=name of student, licenciatura=computing}

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="patronobservador">
+  <ClassDiagramComponents>
+    <Class name="DatosTiempo" package="patronobservador" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="temperatura" type="float" visibility="private"/>
+        <Field name="humedad" type="float" visibility="private"/>
+        <Field name="presion" type="float" visibility="private"/>
+        <Field name="observadores" type="ArrayList&lt;Observador&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="float" name="temperatura"/>
+          <Argument type="float" name="humedad"/>
+          <Argument type="float" name="presion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="registrarObservador" returnType="void" visibility="public">
+          <Argument type="Observador" name="unObservador"/>
+        </Method>
+        <Method name="quitarObservador" returnType="void" visibility="public">
+          <Argument type="Observador" name="unObservador"/>
+        </Method>
+        <Method name="notificarObservadores" returnType="void" visibility="public"/>
+        <Method name="getTemperatura" returnType="float" visibility="public"/>
+        <Method name="setTemperatura" returnType="void" visibility="public">
+          <Argument type="float" name="temperatura"/>
+        </Method>
+        <Method name="getHumedad" returnType="float" visibility="public"/>
+        <Method name="setHumedad" returnType="void" visibility="public">
+          <Argument type="float" name="humedad"/>
+        </Method>
+        <Method name="getPresion" returnType="float" visibility="public"/>
+        <Method name="setPresion" returnType="void" visibility="public">
+          <Argument type="float" name="presion"/>
+        </Method>
+        <Method name="setDatos" returnType="void" visibility="public">
+          <Argument type="float" name="temperatura"/>
+          <Argument type="float" name="humedad"/>
+          <Argument type="float" name="presion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="ElementoVisual" package="patronobservador" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Methods>
+        <Method name="visualizar" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="Observador" package="patronobservador" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Methods>
+        <Method name="actualizar" returnType="void" visibility="public">
+          <Argument type="float" name="temp"/>
+          <Argument type="float" name="hum"/>
+          <Argument type="float" name="pres"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="PatronObservador" package="patronobservador" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Sujeto" package="patronobservador" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Methods>
+        <Method name="registrarObservador" returnType="void" visibility="public">
+          <Argument type="Observador" name="unObservador"/>
+        </Method>
+        <Method name="quitarObservador" returnType="void" visibility="public">
+          <Argument type="Observador" name="unObservador"/>
+        </Method>
+        <Method name="notificarObservadores" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="VisorCondicionesActuales" package="patronobservador" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="unSujeto" type="Sujeto" visibility="private"/>
+        <Field name="temperatura" type="float" visibility="private"/>
+        <Field name="humedad" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Sujeto" name="unSujeto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="actualizar" returnType="void" visibility="public">
+          <Argument type="float" name="temp"/>
+          <Argument type="float" name="hum"/>
+          <Argument type="float" name="pres"/>
+        </Method>
+        <Method name="visualizar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VisorEstadistico" package="patronobservador" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="unSujeto" type="Sujeto" visibility="private"/>
+        <Field name="numLecturas" type="int" visibility="private"/>
+        <Field name="sumTemp" type="float" visibility="private"/>
+        <Field name="tempMax" type="float" visibility="private"/>
+        <Field name="tempMin" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Sujeto" name="unSujeto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="actualizar" returnType="void" visibility="public">
+          <Argument type="float" name="temp"/>
+          <Argument type="float" name="hum"/>
+          <Argument type="float" name="pres"/>
+        </Method>
+        <Method name="visualizar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="unSujeto" source="patronobservador.VisorCondicionesActuales" target="patronobservador.Sujeto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="patronobservador.VisorCondicionesActuales" target="patronobservador.Observador"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="patronobservador.DatosTiempo" target="patronobservador.Sujeto"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="patronobservador.VisorCondicionesActuales" target="patronobservador.ElementoVisual"/>
+    <UseRelation source="patronobservador.DatosTiempo" target="patronobservador.Observador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="patronobservador.VisorEstadistico" target="patronobservador.ElementoVisual"/>
+    <UseRelation source="patronobservador.Sujeto" target="patronobservador.Observador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="patronobservador.VisorEstadistico" target="patronobservador.Observador"/>
+    <HasRelation name="observadores" source="patronobservador.DatosTiempo" target="patronobservador.Observador" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Observador&gt;"/>
+    <HasRelation name="unSujeto" source="patronobservador.VisorEstadistico" target="patronobservador.Sujeto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

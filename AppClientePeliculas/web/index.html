@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Buscador de Peliculas</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+
+    <body>
+
+        <form action="BuscaPelServlet">
+            <h2>Búsqueda de Películas</h2>
+            <fieldset>
+                <legend>
+                    <h3>Datos de Búsqueda</h3>
+                </legend>
+                <div  class="detalles-principales">
+                    <div><label>Nombre del actor principal</label>
+                        <input type="text" name="nombre"></div>
+                    <div>
+                        <label>Selecciona el género*</label>  
+                        <select name="genero">
+                            <option value="love">Amor</option>
+                            <option value="terror">Terror</option>
+                            <option value="axion">Accion</option>
+                            <option value="thriler">Suspenso</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit">Buscar</button>
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>

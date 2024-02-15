@@ -1,0 +1,20 @@
+1,hello
+2,bye
+3,world
+4,sing
+5,car
+6,computer
+7,red
+8,mask
+9,water
+10,house
+11,music
+12,room
+13,developer
+14,book
+15,library
+16,watermelon
+17,bathdroom
+18,kitchen
+19,cell phone
+20,TV

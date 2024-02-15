@@ -1,0 +1,1 @@
+[ Nombre: Jefe 2 Salud: 300.0 Habilidad: 100.0  Jefe{nivel=3, arma=Item{nombre=Rifle, descripcion=mi Rifle, salud=70.0, habilidad=85.0} Arma{daño=30.0}}, Personaje@15db9742]
